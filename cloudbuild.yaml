@@ -1,0 +1,8 @@
+# cloudbuild.yaml für GCP Build mit Service Account und Logging
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/ferienhaus-finanzrechner', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/ferienhaus-finanzrechner']
+options:
+  logging: CLOUD_LOGGING_ONLY
