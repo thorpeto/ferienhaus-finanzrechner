@@ -1,7 +1,8 @@
-
-# Ferienhaus Vollrechner
+# Ferienhaus Investitionsrechner
 
 Eine moderne Webapp zur realistischen Berechnung der Rentabilität von Ferienhaus-Investitionen – jetzt mit detaillierten Kaufnebenkosten, separatem Bereich für potenzielle Einnahmen und klarer Cashflow-Visualisierung.
+
+Das ist ein privates Projekt für private Zwecke. Wir garantieren nicht die Richtigkeit der Berechnungen.
 
 ## Features
 

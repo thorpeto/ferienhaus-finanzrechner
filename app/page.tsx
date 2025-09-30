@@ -377,7 +377,15 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8 text-center text-gray-800">Ferienhaus Vollrechner</h1>
+        <h1 className="text-3xl font-bold mb-4 text-center text-gray-800">Ferienhaus Investitionsrechner</h1>
+        <div className="mb-8 mx-auto max-w-2xl text-center">
+          <p className="text-lg text-gray-700 mb-2">
+            Eine moderne Webapp zur realistischen Berechnung der Rentabilität von Ferienhaus-Investitionen – mit detaillierten Kaufnebenkosten, separatem Bereich für potenzielle Einnahmen und klarer Cashflow-Visualisierung.
+          </p>
+          <p className="text-sm text-gray-500 mt-2">
+            Das ist ein privates Projekt für private Zwecke. Wir garantieren nicht die Richtigkeit der Berechnungen.
+          </p>
+        </div>
 
         {/* Eingaben */}
         <div className="space-y-8 mb-8">
