@@ -1,8 +1,9 @@
 # Dockerfile für Next.js (mit Tailwind)
 FROM node:20-alpine AS builder
 WORKDIR /app
-COPY package.json package-lock.json* pnpm-lock.yaml* yarn.lock* ./
-RUN npm install --frozen-lockfile || yarn install --frozen-lockfile || pnpm install --frozen-lockfile
+COPY package.json .
+COPY package-lock.json* .
+RUN npm install
 COPY . .
 RUN npm run build
 
@@ -14,4 +15,4 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/node_modules ./node_modules
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD ["npx", "next", "start"]
