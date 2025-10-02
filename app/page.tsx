@@ -1,6 +1,8 @@
 
 "use client";
 import Link from "next/link";
+import AdSenseAd from "./components/AdSenseAd";
+
 // Info-Icon-Komponente mit Popover
 function InfoIconWithPopover({ infoKey, infoSource }: { infoKey: string, infoSource?: Record<string, string> }) {
   const [open, setOpen] = useState(false);
@@ -492,6 +494,9 @@ export default function Home() {
                   <li className="font-bold mt-2">Gesamtkosten: {fmt(inputs.kaufpreis + inputs.kaufpreis * pct(inputs.makler_percent) + inputs.kaufpreis * pct(inputs.grunderwerbsteuer_percent) + inputs.kaufpreis * pct(inputs.notar_percent) + inputs.kaufpreis * pct(inputs.grundbuch_percent))}</li>
                 </ul>
               </div>
+              
+              {/* Google AdSense Anzeige #1 */}
+              <AdSenseAd adSlot="1234567890" />
             </div>
           </div>
 
@@ -680,6 +685,9 @@ export default function Home() {
               );
             })()}
           </div>
+          
+          {/* Google AdSense Anzeige #2 */}
+          <AdSenseAd adSlot="0987654321" className="mt-6 min-h-[200px]" />
         </div>
 
         {/* Szenarientabelle */}
