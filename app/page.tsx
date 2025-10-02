@@ -1,5 +1,6 @@
 
 "use client";
+import Link from "next/link";
 // Info-Icon-Komponente mit Popover
 function InfoIconWithPopover({ infoKey, infoSource }: { infoKey: string, infoSource?: Record<string, string> }) {
   const [open, setOpen] = useState(false);
@@ -375,10 +376,10 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 md:p-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gray-50 p-4 md:p-8 flex flex-col">
+      <div className="max-w-7xl mx-auto flex-1">
         <h1 className="text-3xl font-bold mb-4 text-center text-gray-800">Ferienhaus Investitionsrechner</h1>
-        <div className="mb-8 mx-auto max-w-2xl text-center">
+  <div className="mb-8 mx-auto max-w-7xl text-center">
           <p className="text-lg text-gray-700 mb-2">
             Eine moderne Webapp zur realistischen Berechnung der Rentabilität von Ferienhaus-Investitionen – mit detaillierten Kaufnebenkosten, separatem Bereich für potenzielle Einnahmen und klarer Cashflow-Visualisierung.
           </p>
@@ -388,7 +389,7 @@ export default function Home() {
         </div>
 
         {/* Eingaben */}
-        <div className="space-y-8 mb-8">
+  <div className="space-y-8 mb-8 max-w-7xl mx-auto">
           {/* Grunddaten */}
           <div className="bg-white rounded-xl shadow-lg p-6">
             <h2 className="text-xl font-semibold mb-6 text-blue-700">💰 Grunddaten & Finanzierung</h2>
@@ -861,7 +862,21 @@ export default function Home() {
             <li>• Die AfA (Abschreibung für Abnutzung) wird standardmäßig mit 50 Jahren berechnet</li>
           </ul>
         </div>
-      </div>
+      {/* Footer mit Impressum-Link */}
+      <footer className="w-full py-6 bg-gray-100 border-t border-gray-200 mt-8 text-center text-sm text-gray-600">
+        <Link href="/impressum" className="text-blue-600 underline hover:text-blue-800 mr-4">Impressum</Link>
+        <Link href="/datenschutz" className="text-blue-600 underline hover:text-blue-800 mr-4">Datenschutz</Link>
+        <button
+          onClick={() => {
+            localStorage.removeItem('cookieConsent');
+            window.location.reload();
+          }}
+          className="text-blue-600 underline hover:text-blue-800"
+        >
+          Cookie-Einstellungen
+        </button>
+      </footer>
+    </div>
   );
 }
 
