@@ -376,20 +376,69 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 md:p-8 flex flex-col">
-      <div className="max-w-7xl mx-auto flex-1">
-        <h1 className="text-3xl font-bold mb-4 text-center text-gray-800">Ferienhaus Investitionsrechner</h1>
-  <div className="mb-8 mx-auto max-w-7xl text-center">
-          <p className="text-lg text-gray-700 mb-2">
-            Eine moderne Webapp zur realistischen Berechnung der Rentabilität von Ferienhaus-Investitionen – mit detaillierten Kaufnebenkosten, separatem Bereich für potenzielle Einnahmen und klarer Cashflow-Visualisierung.
-          </p>
-          <p className="text-sm text-gray-500 mt-2">
-            Das ist ein privates Projekt für private Zwecke. Wir garantieren nicht die Richtigkeit der Berechnungen.
-          </p>
+    <div className="min-h-screen bg-gray-50 flex flex-col">
+      {/* Professional Header */}
+      <header className="bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-6">
+          <div className="flex items-center justify-between">
+            {/* Logo & Title */}
+            <div className="flex items-center gap-4">
+              {/* Modern Minimalist Logo */}
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                {/* House outline */}
+                <path d="M24 6L8 18V40H18V28H30V40H40V18L24 6Z" fill="white" fillOpacity="0.9"/>
+                {/* Roof accent */}
+                <path d="M24 6L8 18H40L24 6Z" fill="white" fillOpacity="0.2"/>
+                {/* Window */}
+                <rect x="20" y="20" width="8" height="6" fill="#1E40AF" fillOpacity="0.6"/>
+                {/* Graph line overlay */}
+                <path d="M12 34L18 28L24 30L30 24L36 26" stroke="#60A5FA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              
+              <div className="flex flex-col">
+                <h1 className="text-2xl md:text-3xl font-bold text-white leading-tight">
+                  Ferienhaus Investitionsrechner
+                </h1>
+                <p className="text-blue-100 text-sm hidden md:block">
+                  Professionelle Renditeanalyse für Ferienimmobilien
+                </p>
+              </div>
+            </div>
+            
+            {/* Quick Nav (optional) */}
+            <nav className="hidden lg:flex gap-4 text-sm">
+              <a href="#eingaben" className="text-blue-100 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-blue-600/50">
+                Eingaben
+              </a>
+              <a href="#ergebnisse" className="text-blue-100 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-blue-600/50">
+                Ergebnisse
+              </a>
+              <a href="#simulation" className="text-blue-100 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-blue-600/50">
+                Simulation
+              </a>
+            </nav>
+          </div>
         </div>
+      </header>
+
+      {/* Intro Section */}
+      <div className="bg-white border-b border-gray-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-6">
+          <div className="text-center">
+            <p className="text-lg text-gray-700 mb-2 max-w-4xl mx-auto">
+              Eine moderne Webapp zur realistischen Berechnung der Rentabilität von Ferienhaus-Investitionen – mit detaillierten Kaufnebenkosten, separatem Bereich für potenzielle Einnahmen und klarer Cashflow-Visualisierung.
+            </p>
+            <p className="text-sm text-gray-500 mt-2">
+              Das ist ein privates Projekt für private Zwecke. Wir garantieren nicht die Richtigkeit der Berechnungen.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto flex-1 w-full px-4 md:px-8 py-8">
 
         {/* Eingaben */}
-  <div className="space-y-8 mb-8 max-w-7xl mx-auto">
+        <div id="eingaben" className="space-y-8 mb-8 w-full">
           {/* Grunddaten */}
           <div className="bg-white rounded-xl shadow-lg p-6">
             <h2 className="text-xl font-semibold mb-6 text-blue-700">💰 Grunddaten & Finanzierung</h2>
@@ -477,10 +526,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-          </div>
 
-          {/* Kosten */}
-          <div className="bg-white rounded-xl shadow-lg p-6 mt-8">
+        {/* Kosten */}
+        <div className="bg-white rounded-xl shadow-lg p-6 mt-8">
             <h2 className="text-xl font-semibold mb-6 text-red-700">🏠 Laufende Kosten</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {['instandhaltung_percent', 'nebenkosten_jahr', 'reparaturen_jahr', 'marketing_jahr'].map((key) => (
@@ -549,8 +597,8 @@ export default function Home() {
           </div>
         </div>
 
-  {/* Ergebnisse (Basiswerte) */}
-  <div className="bg-white rounded-xl shadow-lg p-6 mb-8 mt-8">
+        {/* Ergebnisse (Basiswerte) */}
+        <div id="ergebnisse" className="bg-white rounded-xl shadow-lg p-6 mb-8 mt-8">
           <h2 className="text-xl font-semibold mb-6 text-gray-700">Basis-Ergebnisse</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {Object.entries(result.base).map(([key, value]) => (
@@ -634,8 +682,8 @@ export default function Home() {
           </div>
         </div>
 
-  {/* Szenarientabelle */}
-  <div className="bg-white rounded-xl shadow-lg p-6 mt-8">
+        {/* Szenarientabelle */}
+        <div className="bg-white rounded-xl shadow-lg p-6 mt-8">
           <h2 className="text-xl font-semibold mb-6 text-gray-700">Szenarien (8–40 Wochen Vermietung)</h2>
           <div className="overflow-x-auto">
             <table className="min-w-full">
@@ -678,8 +726,8 @@ export default function Home() {
           </div>
         </div>
 
-  {/* Monte-Carlo-Simulation */}
-  <div className="bg-white rounded-xl shadow-lg p-6 mt-8">
+        {/* Monte-Carlo-Simulation */}
+        <div id="simulation" className="bg-white rounded-xl shadow-lg p-6 mt-8">
           <h2 className="text-xl font-semibold mb-6 text-purple-700">🎲 Monte-Carlo-Simulation</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
             <div className="flex flex-col">
@@ -768,8 +816,8 @@ export default function Home() {
           )}
         </div>
 
-  {/* Erklärung der Cashflow-Berechnung */}
-  <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6">
+        {/* Erklärung der Cashflow-Berechnung */}
+        <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6">
           <h3 className="text-lg font-semibold text-blue-800 mb-4">📊 Cashflow-Analyse verstehen</h3>
           <div className="space-y-4">
             
@@ -825,8 +873,8 @@ export default function Home() {
           </div>
         </div>
 
-  {/* Kostenaufschlüsselung */}
-  <div className="mt-8 bg-yellow-50 border border-yellow-200 rounded-xl p-6">
+        {/* Kostenaufschlüsselung */}
+        <div className="mt-8 bg-yellow-50 border border-yellow-200 rounded-xl p-6">
           <h3 className="text-lg font-semibold text-yellow-800 mb-3">Berücksichtigte Kosten</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-yellow-700">
             <div>
@@ -851,8 +899,8 @@ export default function Home() {
           </div>
         </div>
 
-  {/* Hinweise */}
-  <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6">
+        {/* Hinweise */}
+        <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6">
           <h3 className="text-lg font-semibold text-blue-800 mb-3">Wichtige Hinweise</h3>
           <ul className="text-sm text-blue-700 space-y-2">
             <li>• Die Berechnungen berücksichtigen jetzt realistische Kostenpositionen</li>
@@ -862,6 +910,8 @@ export default function Home() {
             <li>• Die AfA (Abschreibung für Abnutzung) wird standardmäßig mit 50 Jahren berechnet</li>
           </ul>
         </div>
+      </div>
+
       {/* Footer mit Impressum-Link */}
       <footer className="w-full py-6 bg-gray-100 border-t border-gray-200 mt-8 text-center text-sm text-gray-600">
         <Link href="/impressum" className="text-blue-600 underline hover:text-blue-800 mr-4">Impressum</Link>
