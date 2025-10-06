@@ -199,6 +199,20 @@ export default function Datenschutz() {
               https://policies.google.com/technologies/ads
             </a>.
           </p>
+
+          <h3 className="text-lg font-semibold mb-2 text-gray-800 mt-4">Tarifcheck Werbebanner</h3>
+          <p className="mb-4 text-gray-700">
+            Auf dieser Website werden externe Werbebanner des Anbieters Tarifcheck GmbH eingebunden. Beim Laden und Anzeigen dieser Banner können Daten wie Ihre IP-Adresse, Browserinformationen und ggf. weitere technische Informationen an die Server von Tarifcheck übertragen werden. Die Einbindung erfolgt über externe Skripte und/oder iFrames.
+          </p>
+          <p className="mb-4 text-gray-700">
+            Die Nutzung der Tarifcheck-Werbebanner erfolgt auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG, sofern Sie Ihre Einwilligung zur Anzeige von externen Inhalten und Werbebannern erteilt haben. Die Einwilligung ist jederzeit widerrufbar.
+          </p>
+          <p className="mb-4 text-gray-700">
+            Weitere Informationen zum Datenschutz bei Tarifcheck finden Sie in der Datenschutzerklärung des Anbieters:
+            <a href="https://www.tarifcheck.de/datenschutz/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-blue-800">
+              https://www.tarifcheck.de/datenschutz/
+            </a>.
+          </p>
         </section>
 
         <section className="mb-6">

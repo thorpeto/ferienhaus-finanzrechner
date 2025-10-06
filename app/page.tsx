@@ -402,7 +402,7 @@ export default function Home() {
                   Ferienhaus Investitionsrechner
                 </h1>
                 <p className="text-blue-100 text-sm hidden md:block">
-                  Professionelle Renditeanalyse für Ferienimmobilien
+                  Eine realistische Renditeanalyse für Ferienimmobilien
                 </p>
               </div>
             </div>
@@ -428,7 +428,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-6">
           <div className="text-center">
             <p className="text-lg text-gray-700 mb-2 max-w-4xl mx-auto">
-              Eine moderne Webapp zur realistischen Berechnung der Rentabilität von Ferienhaus-Investitionen – mit detaillierten Kaufnebenkosten, separatem Bereich für potenzielle Einnahmen und klarer Cashflow-Visualisierung.
+              Wir haben uns gefragt: Ab wann finanziert sich unser Traumferienhaus eigentlich selbst? Können wir uns den Kauf wirklich leisten? Und wie viele Tage müssten wir vermieten, damit die Kosten und die Finanzierung gedeckt sind?
+
+              Aus diesen Fragen entstand unsere moderne Webapp – ein Tool zur realistischen Berechnung der Rentabilität von Ferienhaus-Investitionen. Sie berücksichtigt alle relevanten Kaufnebenkosten, zeigt potenzielle Einnahmen übersichtlich und visualisiert den Cashflow klar und verständlich.
+
+              Wenn du dir ähnliche Fragen stellst, hilft dir diese App hoffentlich bei deiner Entscheidung!
             </p>
             <p className="text-sm text-gray-500 mt-2">
               Das ist ein privates Projekt für private Zwecke. Wir garantieren nicht die Richtigkeit der Berechnungen.
@@ -921,6 +925,13 @@ export default function Home() {
       </div>
 
       {/* Footer mit Impressum-Link */}
+      {/* Tarifcheck Werbebanner - Anzeige */}
+      <div className="w-full flex flex-col items-center mb-4">
+        <span className="text-xs text-gray-500 mb-1">Anzeige</span>
+        <a href="https://a.partner-versicherung.de/click.php?partner_id=193524&ad_id=633&deep=baufinanzierung" target="_blank" rel="noopener noreferrer">
+          <img src="https://a.partner-versicherung.de/view.php?partner_id=193524&ad_id=633" width="728" height="90" style={{maxWidth: '100%', height: 'auto'}} alt="Tarifcheck Baufinanzierung Banner" />
+        </a>
+      </div>
       <footer className="w-full py-6 bg-gray-100 border-t border-gray-200 mt-8 text-center text-sm text-gray-600">
         <Link href="/impressum" className="text-blue-600 underline hover:text-blue-800 mr-4">Impressum</Link>
         <Link href="/datenschutz" className="text-blue-600 underline hover:text-blue-800 mr-4">Datenschutz</Link>
